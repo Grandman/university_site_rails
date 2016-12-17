@@ -1,0 +1,25 @@
+<div id="main">
+	<h1><%= @news.title %></h1>
+	<div class="region region-content">
+		<div class="block block-system" id="block-system-main">
+			<div class="content">
+				<div class="node node-news" id="node-1024">
+					<div class="submitted">
+						Оставлен <%= link_to @news.user.name, user_path(@news.user) %></a> <%= @news.date.strftime('%d/%m/%y %T') %>
+					</div>
+					<div class="content clearfix">
+						<div class="field field-name-body field-type-text-with-summary field-label-hidden">
+							<div class="field-items">
+								<div class="field-item even">
+									<%= @news.content %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= link_to 'Редактировать', edit_news_path(@news) %>
