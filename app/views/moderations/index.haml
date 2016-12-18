@@ -1,0 +1,7 @@
+%h1
+  В очереди на модерацию:
+%ul
+  - @users.each do |user|
+    %li
+      = user.name
+      = link_to 'Подтвердить регистрацию', moderation_path(user), method: :post

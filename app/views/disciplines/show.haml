@@ -1,0 +1,11 @@
+%h1
+  = @discipline.name
+%p
+  - if current_user && (current_user == @discipline.user || current_user.admin?)
+    = link_to 'Редактировать', edit_discipline_path(@discipline)
+%p
+  Преподаватели:
+  = link_to @discipline.user.name, user_path(@discipline.user)
+%br
+
+= raw @discipline.page

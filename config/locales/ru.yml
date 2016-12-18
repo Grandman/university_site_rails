@@ -21,3 +21,16 @@
 
 ru:
   hello: "Hello world"
+  devise:
+    registrations:
+      user:
+        signed_up_but_not_approved: 'Требуется подтверждение администратора'
+    failure:
+      not_approved: 'Ваш аккаунт еще не подтвержден'
+  activerecord:
+    attributes:
+      user:
+        name: 'Имя'
+        email: 'Почта'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'

@@ -37,31 +37,10 @@
 		<li class="leaf"><a href="/news" title="Новости сайта">Новости</a></li>
 		<li class="expanded"><a href="/prep">Преподаватели</a>
           <ul class="menu">
-            <li class="first leaf"><a href="/prep/jng">Ярушкина Н. Г.</a></li>
-			<li class="leaf"><a href="/prep/atv">Афанасьева Т. В.</a></li>
-			<li class="leaf"><a href="/prep/siv">Семушин И. В.</a></li>
-			<li class="leaf"><a href="/prep/ssv">Скворцов С. В.</a></li>
-			<li class="leaf"><a href="/prep/vvv">Воронина В. В.</a></li>
-			<li class="leaf"><a href="/prep/eon">Евсеева О. Н.</a></li>
-			<li class="leaf"><a href="/prep/ksv">Куркина С.В.</a></li>
-			<li class="leaf"><a href="/prep/lob">Ларионова О. Б.</a></li>
-			<li class="leaf"><a href="/prep/mpv">Мытарев П. В.</a></li>
-			<li class="leaf"><a href="/prep/nam">Наместников А. М.</a></li>
-			<li class="leaf"><a href="/prep/raa">Романов А. А.</a></li>
-			<li class="leaf"><a href="/prep/sev">Суркова Е. В.</a></li>
-			<li class="leaf"><a href="/prep/tvg">Тронин В. Г.</a></li>
-			<li class="leaf"><a href="/prep/faa">Филиппов А. А.</a></li>
-			<li class="leaf"><a href="/prep/chav">Чекина А. В.</a></li>
-			<li class="leaf"><a href="/prep/shni">Шанченко Н. И.</a></li>
-			<li class="leaf"><a href="/prep/shab">Шамшев Ан. Б.</a></li>
-			<li class="leaf"><a href="/prep/vof">Власенко О. Ф.</a></li>
-			<li class="leaf"><a href="/prep/ggu">Гуськов Г. Ю.</a></li>
-			<li class="leaf"><a href="/prep/knv">Корунова Н. В.</a></li>
-			<li class="leaf"><a href="/prep/kms">Кукушкина М. С.</a></li>
-			<li class="leaf"><a href="/prep/mvs">Мошкин В. С.</a></li>
-			<li class="leaf"><a href="/prep/tia">Тимина И. А.</a></li>
-			<li class="leaf"><a href="/prep/een">Эгов Е. Н.</a></li>
-			<li class="last leaf"><a href="/prep/ydv">Яшин Д. В.</a></li>
+            <li class="first leaf">
+              <% User.where(role: :teacher).order(name: :asc).each do |teacher|  %>
+                <li class="leaf"><%= link_to teacher.name, user_path(teacher) %> </li>
+              <% end %>
 	      </ul>
         </li>
 		<li class="expanded"><a href="/napr">Направления</a>

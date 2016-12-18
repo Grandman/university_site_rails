@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   resources :users
   resources :comments
   resources :news
+  resources :disciplines
+  get '/moderations', to: 'moderations#index'
   get '/elfinder_manager', to: 'elfinder#index'
   match 'elfinder' => 'elfinder#elfinder', via: [:get, :post]
+  post '/moderations/:user_id', to: 'moderations#create', as: :moderation
+  post '/users/teacher', to: 'users#teacher', as: :new_teacher
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
