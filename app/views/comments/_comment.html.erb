@@ -1,0 +1,15 @@
+<div class="comment odd">
+	<div class="clearfix">
+		<span class="submitted">Оставлен <%= link_to comment.user.name, user_path(comment.user) %> <%= comment.date.strftime('%d/%m/%y %T') %></span>
+		<h3><%= comment.title %></h3>
+		<div class="content">
+			<div class="field field-name-comment-body field-type-text-long field-label-hidden">
+				<div class="field-items">
+					<div class="field-item even">
+						<%= comment.content %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

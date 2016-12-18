@@ -1,4 +1,4 @@
-<div id="main">
+
 	<h1><%= @news.title %></h1>
 	<div class="region region-content">
 		<div class="block block-system" id="block-system-main">
@@ -11,15 +11,57 @@
 						<div class="field field-name-body field-type-text-with-summary field-label-hidden">
 							<div class="field-items">
 								<div class="field-item even">
-									<%= @news.content %>
+									<%= raw @news.content %>
 								</div>
 							</div>
+						</div>
+					</div>
+					<div class="clearfix">
+						<div class="links"><%= link_to 'Редактировать', edit_news_path(@news) %></div>
+						<div class="comment-wrapper" id="comments">
+							<div id="comments-title">
+							<div id="comments-title-left">
+									<h2 class="title">Комментарии</h2>
+									</div>
+				
+							
+							</div>
+
+						</div>
+                        <% @comments.each do |comment| %>
+                           <%= render 'comments/comment', comment: comment %>
+                        <% end %>
+							<h2 class="title comment-form">Добавить комментарий</h2>
+							<%= form_for @comment do |f| %>
+								<div>
+									<div class="form-item form-type-item" id="edit-author--2">
+										<b>Ваше имя</b><br> <%= link_to @news.user.name, user_path(@news.user) %>
+									</div>
+									<div class="form-item form-type-textfield form-item-subject">
+										<b>Тема</b><br> <%= f.text_field :title %>
+									</div>
+									<div class="field-type-text-long field-name-comment-body field-widget-text-textarea form-wrapper" id="edit-comment-body">
+										<div id="comment-body-add-more-wrapper">
+											<div class="text-format-wrapper">
+												<div class="form-item form-type-textarea form-item-comment-body-und-0-value">
+													<label for="edit-comment-body-und-0-value">Comment <span class="form-required" title="Обязательно для заполнения.">*</span></label>
+													<div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
+														<%= f.text_area :content %>
+                                                        <%= f.hidden_field :user_id, value: current_user.id %>
+                                                        <%= f.hidden_field :news_id, value: @news.id %>
+													</div>
+												</fieldset>
+											</div>
+										</div>
+									</div>
+									<div class="form-actions form-wrapper" id="edit-actions">
+										<%= f.submit 'Добавить'%>
+									</div>
+								</div>
+							<% end %>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-
-<%= link_to 'Редактировать', edit_news_path(@news) %>

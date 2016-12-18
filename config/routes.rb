@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "home#index"
   resources :users
+  resources :comments
   resources :news
+  get '/elfinder_manager', to: 'elfinder#index'
+  match 'elfinder' => 'elfinder#elfinder', via: [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

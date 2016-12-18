@@ -10,6 +10,8 @@ class NewsController < ApplicationController
   # GET /news/1
   # GET /news/1.json
   def show
+    @comments = @news.comments.where.not(user_id: nil)
+    @comment = @news.comments.build
   end
 
   # GET /news/new
