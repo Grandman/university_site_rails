@@ -27,6 +27,10 @@ ru:
         signed_up_but_not_approved: 'Требуется подтверждение администратора'
     failure:
       not_approved: 'Ваш аккаунт еще не подтвержден'
+    sessions:
+      user:
+        signed_in: 'Вы успешно вошли'
+        signed_out: 'Вы успешно вышли'
   activerecord:
     attributes:
       user:
@@ -34,3 +38,5 @@ ru:
         email: 'Почта'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
+        current_password: 'Текущий пароль'
+        avatar: 'Аватар'

@@ -110,10 +110,18 @@
 </div>
 <div id="content">
   <div id="content-inside" class="inside">
-    <% unless devise_controller? %>
-      <%= render 'layouts/sidebar' %>
-    <% end %>
+    <div id="sidebar">
+      <div class="region region-sidebar-first">
+         <%= render 'layouts/news_widget' %>
+         <% unless devise_controller? %>
+           <%= render 'layouts/login_widget' %>
+         <% end %>
+       </div>
+     </div>
     <div id='main'>
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
       <%= yield %>
     </div>
   </div>

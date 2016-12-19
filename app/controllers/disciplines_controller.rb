@@ -8,8 +8,7 @@ class DisciplinesController < ApplicationController
   end
 
   def update
-    @discipline = Discipline.new(params.require(:discipline).permit(:name, :user_id, :page))
-    @discipline.save!
+    @discipline = Discipline.find(params[:id]).update(params.require(:discipline).permit(:name, :user_id, :page))
     redirect_to @discipline
   end
 

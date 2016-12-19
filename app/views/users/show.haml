@@ -1,2 +1,15 @@
 %h1
   = @user.name
+  - if @user == current_user
+    = link_to 'Редактировать', edit_user_registration_path
+- if @user.teacher?
+  .some{ style: 'float: left; padding-right: 10px;' }
+    = image_tag @user.avatar
+  %div
+    = raw @user.info
+    - if @user.teacher?
+      Преподаваемые дисциплины:
+      - @user.disciplines.each do |discipline|
+        %p
+          = link_to discipline.name, discipline_path(discipline)
+
