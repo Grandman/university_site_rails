@@ -5,4 +5,10 @@ class CommentsController < ApplicationController
     @comment.save!
     redirect_to news_path(@comment.news)
   end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to @comment.news
+  end
 end
