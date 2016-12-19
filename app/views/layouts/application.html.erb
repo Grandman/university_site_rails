@@ -33,9 +33,9 @@
 <div id="header-menu">
     <div id="header-menu-inside">
       <ul class="menu">
-        <li class="first leaf"><a href="/enrollee">Абитуриентам</a></li>
+        <li class="first leaf"><%= link_to 'Абитуриентам', page_path('enrollee') %></li>
 		<li class="leaf"><a href="/news" title="Новости сайта">Новости</a></li>
-		<li class="expanded"><a href="/prep">Преподаватели</a>
+		<li class="expanded"><a href="#">Преподаватели</a>
           <ul class="menu">
             <li class="first leaf">
               <% User.where(role: :teacher).order(name: :asc).each do |teacher|  %>
@@ -43,10 +43,10 @@
               <% end %>
 	      </ul>
         </li>
-		<li class="expanded"><a href="/napr">Направления</a>
-          <ul class="menu"><li class="first expanded"><a href="/bak">Бакалавриат</a>
+        <li class="expanded"><%= link_to 'Направления', page_path('napr') %>
+          <ul class="menu"><li class="first expanded"><%= link_to 'Направления', page_path('bak') %>
             <ul class="menu">
-              <li class="first expanded"><a href="/ISEbd">Прикладная информатика</a>
+              <li class="first expanded"><%= link_to 'Прикладная информатика', page_path('bak/isebd') %>
 			    <ul class="menu">
 			      <li class="first leaf"><a href="/ISEbd-1">Курс 1</a></li>
 				  <li class="leaf"><a href="/ISEbd-2">Курс 2</a></li>
@@ -54,7 +54,7 @@
 				  <li class="last leaf"><a href="/ISEbd-4">Курс 4</a></li>
 				</ul>
 			  </li>
-			 <li class="last expanded"><a href="/PIbd">Программная инженерия</a>
+			 <li class="last expanded"><%= link_to 'Программная инженерия', page_path('bak/pibd') %>
                <ul class="menu">
                  <li class="first leaf"><a href="/PIbd-1">Курс 1</a></li>
 			     <li class="leaf"><a href="/PIbd-2">Курс 2</a></li>
@@ -64,7 +64,7 @@
              </li>
 		   </ul>
          </li>
-		 <li class="last expanded"><a href="/mag">Магистратура</a>
+         <li class="last expanded"><%= link_to 'Магистратура', page_path('mag') %>
 			<ul class="menu">
 				<li class="first expanded"><a href="/ISEmd">Прикладная информатика</a>
 					<ul class="menu">
