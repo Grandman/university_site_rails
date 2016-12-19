@@ -7,6 +7,7 @@
         <% if current_user.try(:admin?) %>
           <li class="first leaf menu-mlid-2"><%= link_to 'Добавить предмет', new_discipline_path %></a></li>
           <li class="first leaf menu-mlid-2"><%= link_to 'Добавить преподавателя', new_user_path %></a></li>
+          <li class="first leaf menu-mlid-2"><%= link_to 'Модерация', moderations_path %></a></li>
         <% end %>
         <li class="first leaf menu-mlid-2"><%= link_to 'Мой профиль', user_path(current_user) %></a></li>
         <li class="last leaf menu-mlid-15"><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></li>

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   extend Enumerize
+  after_create :create_folder
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -24,5 +25,11 @@ class User < ActiveRecord::Base
     else
       super # Use whatever other message
     end
+  end
+
+  private
+
+  def create_folder
+    FileUtils::mkdir_p File.join(Rails.public_path, 'uploads', 'folder', id.to_s)
   end
 end

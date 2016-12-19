@@ -8,8 +8,8 @@ class ElfinderController < ApplicationController
   end
 
   def elfinder
-    rootpath = File.join(Rails.public_path, 'uploads', current_user.id.to_s)
-    rooturl = "/uploads/#{current_user.id}"
+    rootpath = File.join(Rails.public_path, 'uploads', 'folder', current_user.id.to_s)
+    rooturl = "/uploads/folder/#{current_user.id}"
 
     h, r = ElFinder::Connector.new(
       :root => rootpath,

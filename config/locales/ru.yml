@@ -36,6 +36,7 @@ ru:
       timeout: "Ваш сеанс закончился. Пожалуйста, войдите в систему снова."
       unauthenticated: "Вам необходимо войти в систему или зарегистрироваться."
       unconfirmed: "Вы должны подтвердить вашу учётную запись."
+      not_approved: 'Ваш аккаунт еще не подтвержден'
     mailer:
       confirmation_instructions:
         subject: "Инструкции по подтверждению учётной записи."
@@ -85,8 +86,6 @@ ru:
     registrations:
       user:
         signed_up_but_not_approved: 'Требуется подтверждение администратора'
-    failure:
-      not_approved: 'Ваш аккаунт еще не подтвержден'
   activerecord:
     attributes:
       user:
