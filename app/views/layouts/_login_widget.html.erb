@@ -1,5 +1,7 @@
 <div id="block-user-login" class="block block-user">
-  <h2>Вход в аккаунт</h2>
+  <% unless current_user %>
+    <h2>Вход в аккаунт</h2>
+  <% end %>
   <div class="content">
   <% if current_user %>
     <div class="menu-block-wrapper menu-block-2 menu-name-user-menu parent-mlid-0 menu-level-1">
