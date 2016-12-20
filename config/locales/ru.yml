@@ -95,3 +95,4 @@ ru:
         password_confirmation: 'Подтверждение пароля'
         current_password: 'Текущий пароль'
         avatar: 'Аватар'
+        info: 'Информация'

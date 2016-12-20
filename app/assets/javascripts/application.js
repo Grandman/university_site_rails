@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require tinymce-jquery
 //= require unobtrusive_flash
 //= require unobtrusive_flash_ui
