@@ -17,5 +17,15 @@
                 = link_to discipline.name, discipline_path(discipline)
     = tab.static :files, 'Файл менеджер' do
       %iframe{src: "/elfinder_manager", width: '670px', height: '500px', frameborder: '0'}
-
+- else
+  - if @user.teacher?
+    .some{ style: 'float: left; padding-right: 10px;' }
+      = image_tag @user.avatar
+    %div
+      = raw @user.info
+      - if @user.teacher?
+        Преподаваемые дисциплины:
+        - @user.disciplines.each do |discipline|
+          %p
+            = link_to discipline.name, discipline_path(discipline)
 
