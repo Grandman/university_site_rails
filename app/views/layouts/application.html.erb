@@ -33,7 +33,7 @@
 <div id="header-menu">
     <div id="header-menu-inside">
       <ul class="menu">
-        <li class="first leaf"><%= link_to 'Абитуриентам', page_path('enrollee') %></li>
+        <li class="first leaf"><a href='/static_pages/enrollee'>Абитуриентам</a></li>
 		<li class="leaf"><a href="/news" title="Новости сайта">Новости</a></li>
 		<li class="expanded"><a href="#">Преподаватели</a>
           <ul class="menu">
@@ -43,58 +43,58 @@
               <% end %>
 	      </ul>
         </li>
-        <li class="expanded"><%= link_to 'Направления', page_path('napr') %>
-          <ul class="menu"><li class="first expanded"><%= link_to 'Направления', page_path('bak') %>
+        <li class="expanded"><a href=/static_pages/napr'>Направления</a>
+        <ul class="menu"><li class="first expanded"><a href='/static_pages/bak'>Бакалавриат</a>
             <ul class="menu">
-              <li class="first expanded"><%= link_to 'Прикладная информатика', page_path('bak/isebd') %>
+              <li class="first expanded"><a href='/static_pages/bak/isebd'>Прикладная информатика</a>
 			    <ul class="menu">
-			      <li class="first leaf"><a href="/ISEbd-1">Курс 1</a></li>
-				  <li class="leaf"><a href="/ISEbd-2">Курс 2</a></li>
-				  <li class="leaf"><a href="/ISEbd-3">Курс 3</a></li>
-				  <li class="last leaf"><a href="/ISEbd-4">Курс 4</a></li>
+			      <li class="first leaf"><a href="/static_pages/ISEbd-1">Курс 1</a></li>
+				  <li class="leaf"><a href="/static_pages/ISEbd-2">Курс 2</a></li>
+				  <li class="leaf"><a href="/static_pages/ISEbd-3">Курс 3</a></li>
+				  <li class="last leaf"><a href="/static_pages/ISEbd-4">Курс 4</a></li>
 				</ul>
 			  </li>
-			 <li class="last expanded"><%= link_to 'Программная инженерия', page_path('bak/pibd') %>
+                          <li class="last expanded"><a href='/static_pages/bak/pibd'>Программная инженерия</a>
                <ul class="menu">
-                 <li class="first leaf"><a href="/PIbd-1">Курс 1</a></li>
-			     <li class="leaf"><a href="/PIbd-2">Курс 2</a></li>
-			     <li class="leaf"><a href="/PIbd-3">Курс 3</a></li>
-			     <li class="last leaf"><a href="/PIbd-4">Курс 4</a></li>
+                 <li class="first leaf"><a href="/static_pages/PIbd-1">Курс 1</a></li>
+			     <li class="leaf"><a href="/static_pages/PIbd-2">Курс 2</a></li>
+			     <li class="leaf"><a href="/static_pages/PIbd-3">Курс 3</a></li>
+			     <li class="last leaf"><a href="/static_pages/PIbd-4">Курс 4</a></li>
 			   </ul>
              </li>
 		   </ul>
          </li>
-         <li class="last expanded"><%= link_to 'Магистратура', page_path('mag') %>
+         <li class="last expanded"><a href='/static_pages/mag'>Магистратура</a>
 			<ul class="menu">
-				<li class="first expanded"><a href="/ISEmd">Прикладная информатика</a>
+				<li class="first expanded"><a href="/static_pages/ISEmd">Прикладная информатика</a>
 					<ul class="menu">
-					  <li class="first leaf"><a href="/ISEmd-1">Курс 1</a></li>
-					  <li class="leaf"><a href="/ISEmd-2">Курс 2</a></li>
+					  <li class="first leaf"><a href="/static_pages/ISEmd-1">Курс 1</a></li>
+					  <li class="leaf"><a href="/static_pages/ISEmd-2">Курс 2</a></li>
 					</ul>
 				 </li>
-				 <li class="last expanded"><a href="/PImd">Программная инженерия</a>
+				 <li class="last expanded"><a href="/static_pages/PImd">Программная инженерия</a>
 				   <ul class="menu">
-					 <li class="first leaf"><a href="/PImd-1">Курс 1</a></li>
-					 <li class="leaf"><a href="/PImd-2">Курс 2</a></li>
+					 <li class="first leaf"><a href="/static_pages/PImd-1">Курс 1</a></li>
+					 <li class="leaf"><a href="/static_pages/PImd-2">Курс 2</a></li>
 				   </ul>
 				 </li>
 			</ul>
 		 </li>
        </ul>
      </li>
-	 <li class="expanded"><a href="/science">Наука</a>
+	 <li class="expanded"><a href="/static_pages/science">Наука</a>
        <ul class="menu">
-         <li class="first collapsed"><a href="/pis">ПИС</a></li>
-	     <li class="leaf"><a href="/sntk">СНТК</a></li>
-		 <li class="leaf"><a href="/science/nir" title="">НИР</a></li>
-		 <li class="last leaf"><a href="/science/nirs" title="">НИРС</a></li>
+         <li class="first collapsed"><a href="/static_pages/pis">ПИС</a></li>
+	     <li class="leaf"><a href="/static_pages/sntk">СНТК</a></li>
+		 <li class="leaf"><a href="/static_pages/science/nir" title="">НИР</a></li>
+		 <li class="last leaf"><a href="/static_pages/science/nirs" title="">НИРС</a></li>
 	   </ul>
      </li>
-	 <li class="last expanded"><a href="/rasp">Расписание</a>
+	 <li class="last expanded"><a href="/static_pages/rasp">Расписание</a>
        <ul class="menu">
-         <li class="first leaf"><a href="/rasp/group">Расписание групп</a></li>
-	  	 <li class="leaf"><a href="/rasp/prep">Расписание преподавателей</a></li>
-	  	 <li class="last leaf"><a href="/rasp/aud">Расписание аудиторий</a></li>
+         <li class="first leaf"><a href="/static_pages/rasp/group">Расписание групп</a></li>
+	  	 <li class="leaf"><a href="/static_pages/rasp/prep">Расписание преподавателей</a></li>
+	  	 <li class="last leaf"><a href="/static_pages/rasp/aud">Расписание аудиторий</a></li>
 	   </ul>
      </li>
    </ul>

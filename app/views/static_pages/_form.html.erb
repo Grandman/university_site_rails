@@ -1,0 +1,55 @@
+<script>/*<![CDATA[*/tinymce.init({
+    selector: "textarea",
+    plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+        "insertdatetime media table contextmenu paste"
+    ],
+    language: 'ru',
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    file_browser_callback : elFinderBrowser
+});
+
+function elFinderBrowser (field_name, url, type, win) {
+  tinymce.activeEditor.windowManager.open({
+    file: '/elfinder_manager',// use an absolute path!
+    title: 'elFinder 2.0',
+    width: 900,
+    height: 450,
+    resizable: 'yes'
+  }, {
+    setUrl: function (file) {
+      win.document.getElementById(field_name).value = file.url;
+    }
+  });
+  return false;
+}/*]]>*/</script>
+
+
+<%= form_for(@static_page) do |f| %>
+  <% if @static_page.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @static_page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %><br>
+    <%= f.text_field :slug %>
+  </div>
+  <div class="form-actions form-wrapper" id="edit-actions">
+    <%= f.submit 'Отправить', id: 'edit-submit' %>
+  </div>
+<% end %>

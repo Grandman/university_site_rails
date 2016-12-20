@@ -1,0 +1,5 @@
+<h1> <%= @static_page.name %> </h1>
+<%= raw @static_page.content %>
+<% if current_user && current_user.admin? %>
+  <%= link_to 'Редактировать', edit_static_page_path(@static_page) %>
+<% end %>

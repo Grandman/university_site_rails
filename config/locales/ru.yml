@@ -96,3 +96,10 @@ ru:
         current_password: 'Текущий пароль'
         avatar: 'Аватар'
         info: 'Информация'
+      static_page:
+        content: Содержание
+        name: Название
+        slug: Адрес
+    models:
+      user: Пользователь
+      static_page: Страница
