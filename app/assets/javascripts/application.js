@@ -18,4 +18,4 @@
 //= require unobtrusive_flash_ui
 //= require_tree .
 
-UnobtrusiveFlash.flashOptions['timeout'] = 2000; // milliseconds
+UnobtrusiveFlash.flashOptions['timeout'] = 4000; // milliseconds
