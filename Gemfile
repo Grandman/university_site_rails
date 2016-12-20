@@ -38,7 +38,6 @@ gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
 gem 'enumerize'
 gem 'rails-i18n'
-gem 'high_voltage'
 gem 'seed_dump'
 gem 'rails_12factor', group: :production
 gem 'carrierwave'
