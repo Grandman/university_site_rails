@@ -16,6 +16,8 @@
 //= require tinymce-jquery
 //= require unobtrusive_flash
 //= require unobtrusive_flash_ui
+//= require jquery.bettertabs.min
 //= require_tree .
 
 UnobtrusiveFlash.flashOptions['timeout'] = 4000; // milliseconds
+jQuery('.bettertabs').bettertabs(); // apply bettertabs to any element with the bettertabs css class

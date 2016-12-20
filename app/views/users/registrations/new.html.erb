@@ -32,9 +32,8 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Зарегистрироваться" %>
+  <div class="form-actions form-wrapper" id="edit-actions">
+    <%= f.submit "Зарегистрироваться", id: 'edit-submit' %>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>

@@ -8,9 +8,7 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Отправить письмо с восстановлением пароля" %>
+  <div class="form-actions form-wrapper" id="edit-actions">
+    <%= f.submit "Отправить письмо с восстановлением пароля", id: 'edit-submit' %>
   </div>
 <% end %>
-
-<%= render "users/shared/links" %>

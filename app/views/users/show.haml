@@ -2,14 +2,20 @@
   = @user.name
   - if @user == current_user
     = link_to 'Редактировать', edit_user_registration_path
-- if @user.teacher?
-  .some{ style: 'float: left; padding-right: 10px;' }
-    = image_tag @user.avatar
-  %div
-    = raw @user.info
-    - if @user.teacher?
-      Преподаваемые дисциплины:
-      - @user.disciplines.each do |discipline|
-        %p
-          = link_to discipline.name, discipline_path(discipline)
+- if @user == current_user
+  = bettertabs :profile_tabs, :selected_tab => :info do |tab|
+    = tab.static :info, 'Информация' do
+      - if @user.teacher?
+        .some{ style: 'float: left; padding-right: 10px;' }
+          = image_tag @user.avatar
+        %div
+          = raw @user.info
+          - if @user.teacher?
+            Преподаваемые дисциплины:
+            - @user.disciplines.each do |discipline|
+              %p
+                = link_to discipline.name, discipline_path(discipline)
+    = tab.static :files, 'Файл менеджер' do
+      %iframe{src: "/elfinder_manager", width: '670px', height: '500px', frameborder: '0'}
+
 

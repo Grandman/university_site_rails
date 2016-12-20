@@ -19,7 +19,7 @@
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Добавить преподавателя" %>
+  <div class="form-actions form-wrapper" id="edit-actions">
+    <%= f.submit "Добавить преподавателя", id: 'edit-submit' %>
   </div>
 <% end %>

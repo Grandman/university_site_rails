@@ -44,6 +44,7 @@ gem 'rails_12factor', group: :production
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'unobtrusive_flash'
+gem 'bettertabs'
 
 
 group :development, :test do

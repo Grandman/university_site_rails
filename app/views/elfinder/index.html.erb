@@ -8,9 +8,9 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 
 
-  <script type="text/javascript" src="/elfinder/js/elfinder.min.js"></script>
+  <script type="text/javascript" src="/elfinder/js/elfinder.full.js"></script>
   <script src="/elfinder/js/proxy/elFinderSupportVer1.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript" src="/elfinder/js/i18n/elfinder.de.js"></script><!-- optional -->
+  <script type="text/javascript" src="/elfinder/js/i18n/elfinder.ru.js"></script><!-- optional -->
 
   <link rel="stylesheet" type="text/css" media="screen" href="/elfinder/css/elfinder.min.css">
   <link rel="stylesheet" type="text/css" media="screen" href="/elfinder/css/theme.css">
@@ -40,6 +40,20 @@
       url: '/elfinder',  // connector URL
       transport : new elFinderSupportVer1(),
       lang: 'ru',
+      uiOptions : {
+        toolbar : [
+          ['back', 'forward'],
+          // ['reload'],
+          // ['home', 'up'],
+          ['mkdir', 'upload'],
+          ['open', 'download'],
+          ['info'],
+          ['quicklook'],
+          ['rm'],
+          ['search'],
+          ['view'],
+        ]
+      },
 
       getFileCallback: function(file) { // editor callback
         // file.url - commandsOptions.getfile.onlyURL = false (default)

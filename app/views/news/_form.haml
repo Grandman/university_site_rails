@@ -33,4 +33,5 @@
   %br
   %b Содержание:
   = f.text_area :content
-  = f.submit 'Отправить'
+  .form-actions.form-wrapper#edit-actions
+    = f.submit 'Отправить', id: 'edit-submit'

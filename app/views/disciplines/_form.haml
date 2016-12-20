@@ -36,4 +36,5 @@
   %br
   %b Содержание:
   = f.text_area :page
-  = f.submit 'Сохранить'
+  .form-actions.form-wrapper#edit-actions
+    = f.submit 'Сохранить', id: 'edit-submit'
