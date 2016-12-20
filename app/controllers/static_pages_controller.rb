@@ -28,7 +28,7 @@ class StaticPagesController < ApplicationController
 
     respond_to do |format|
       if @static_page.save
-        format.html { redirect_to @static_page, notice: 'Static page was successfully created.' }
+        format.html { redirect_to @static_page, notice: 'Страница успешно создана' }
         format.json { render :show, status: :created, location: @static_page }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class StaticPagesController < ApplicationController
   def update
     respond_to do |format|
       if @static_page.update(static_page_params)
-        format.html { redirect_to @static_page, notice: 'Static page was successfully updated.' }
+        format.html { redirect_to @static_page, notice: 'Страница успешно обновлена' }
         format.json { render :show, status: :ok, location: @static_page }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class StaticPagesController < ApplicationController
   def destroy
     @static_page.destroy
     respond_to do |format|
-      format.html { redirect_to static_pages_url, notice: 'Static page was successfully destroyed.' }
+      format.html { redirect_to static_pages_url, notice: 'Страница успешно удалена' }
       format.json { head :no_content }
     end
   end

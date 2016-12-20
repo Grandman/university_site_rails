@@ -31,6 +31,9 @@
   %b Название:
   = f.text_field :title
   %br
+  %b Категория:
+  = f.collection_select(:category_id, Category.all, :id, :name)
+  %br
   %b Содержание:
   = f.text_area :content
   .form-actions.form-wrapper#edit-actions

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :news
+  get 'nir/', to: 'news#index', category: '2'
+  get 'nirs/', to: 'news#index', category: '3'
   devise_for :users
   root to: "static_pages#show", id: 'index'
   resources :users

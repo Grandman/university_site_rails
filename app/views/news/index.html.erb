@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Новости</h1>
+<% if params[:category] %>
+  <h1> <%= Category.find(params[:category]).name %> </h1>
+<% else %>
+  <h1>Новости</h1>
+<% end %>
 
   <tbody>
     <% @news.each do |news| %>
