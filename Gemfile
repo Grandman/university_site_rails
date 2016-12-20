@@ -43,6 +43,7 @@ gem 'seed_dump'
 gem 'rails_12factor', group: :production
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'unobtrusive_flash'
 
 
 group :development, :test do

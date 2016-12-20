@@ -11,5 +11,6 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require unobtrusive_flash_ui
  *= require_self
  */
