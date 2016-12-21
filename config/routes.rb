@@ -14,12 +14,12 @@ Rails.application.routes.draw do
   post '/moderations/:user_id', to: 'moderations#create', as: :moderation
   post '/users/teacher', to: 'users#teacher', as: :new_teacher
   get '/pages/:id', to: 'static_pages#show'
-  get '/static_pages/edit/*id' , to: 'static_pages#edit', as: :edit_static_page, id: %r{([aA-zZ0-9_]+/*)+}
+  get '/static_pages/edit/*id' , to: 'static_pages#edit', as: :edit_static_page, id: %r{([aA-zZ0-9_-]+/*)+}
   get '/static_pages/new' , to: 'static_pages#new', as: :new_static_page
-  get '/static_pages/*id' , to: 'static_pages#show', as: :static_page, id: %r{([aA-zZ0-9_]+/*)+}
-  put '/static_pages/*id' , to: 'static_pages#update', id: %r{([aA-zZ0-9_]+/*)+}
-  patch '/static_pages/*id' , to: 'static_pages#update', id: %r{([aA-zZ0-9_]+/*)+}
-  delete '/static_pages/*id' , to: 'static_pages#destroy', id: %r{([aA-zZ0-9_]+/*)+}
+  get '/static_pages/*id' , to: 'static_pages#show', as: :static_page, id: %r{([aA-zZ0-9_-]+/*)+}
+  put '/static_pages/*id' , to: 'static_pages#update', id: %r{([aA-zZ0-9_-]+/*)+}
+  patch '/static_pages/*id' , to: 'static_pages#update', id: %r{([aA-zZ0-9_-]+/*)+}
+  delete '/static_pages/*id' , to: 'static_pages#destroy', id: %r{([aA-zZ0-9_-]+/*)+}
   get '/static_pages/' , to: 'static_pages#index', as: :static_pages
   post '/static_pages/' , to: 'static_pages#create'
   # The priority is based upon order of creation: first created -> highest priority.
