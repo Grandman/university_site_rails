@@ -1,5 +1,5 @@
 class StaticPage < ActiveRecord::Base
-  validates :slug, uniqueness: true
+  validates :slug, uniqueness: true, presence: true
   validates :name, presence: true
   validates :content, presence: true
 
