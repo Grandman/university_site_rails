@@ -44,6 +44,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'unobtrusive_flash'
 gem 'bettertabs'
+gem 'kaminari'
+gem 'kaminari-i18n'
 
 
 group :development, :test do

@@ -9,6 +9,7 @@ class NewsController < ApplicationController
     else
       @news = News.all
     end
+    @news = @news.order(created_at: :desc).page params[:page]
   end
 
   # GET /news/1

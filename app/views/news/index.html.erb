@@ -28,6 +28,7 @@
 </div>
   </div>
     <% end %>
+    <%= paginate @news %>
 
 <%- if current_user && ( current_user.admin? || current_user.teacher?) %>
   <%= link_to 'Добавить новость', new_news_path %>
