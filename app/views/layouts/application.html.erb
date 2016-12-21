@@ -35,10 +35,10 @@
       <ul class="menu">
         <li class="first leaf"><a href='/static_pages/enrollee'>Абитуриентам</a></li>
 		<li class="leaf"><a href="/news" title="Новости сайта">Новости</a></li>
-		<li class="expanded"><a href="#">Преподаватели</a>
+		<li class="expanded"><a href="/static_pages/prep">Преподаватели</a>
           <ul class="menu">
             <li class="first leaf">
-              <% User.where(role: :teacher).order(name: :asc).each do |teacher|  %>
+              <% User.where(role: :teacher).order(:id).each do |teacher|  %>
                 <li class="leaf"><%= link_to teacher.name, user_path(teacher) %> </li>
               <% end %>
 	      </ul>
