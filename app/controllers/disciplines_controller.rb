@@ -8,8 +8,13 @@ class DisciplinesController < ApplicationController
   end
 
   def update
-    @discipline = Discipline.find(params[:id]).update(params.require(:discipline).permit(:name, :user_id, :page))
-    redirect_to @discipline
+    @discipline = Discipline.find(params[:id])
+    if (@discipline.update(params.require(:discipline).permit(:name, :user_id, :page)))
+      redirect_to @discipline
+    else
+      flash[:error] = @discipline.errors.full_messages.to_sentence
+      render :edit
+    end
   end
 
   def new
@@ -18,7 +23,11 @@ class DisciplinesController < ApplicationController
 
   def create
     @discipline = Discipline.new(params.require(:discipline).permit(:name, :user_id, :page))
-    @discipline.save!
-    redirect_to @discipline
+    if @discipline.save
+      redirect_to @discipline
+    else
+      flash[:error] = @discipline.errors.full_messages.to_sentence
+      render :new
+    end
   end
 end
