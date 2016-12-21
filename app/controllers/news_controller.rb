@@ -7,7 +7,7 @@ class NewsController < ApplicationController
     if category_id = params[:category]
       @news = News.where(category_id: category_id)
     else
-      @news = News.where(category_id: 0)
+      @news = News.where(category_id: 1)
     end
     @news = @news.order(created_at: :desc).page params[:page]
   end
