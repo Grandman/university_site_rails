@@ -46,6 +46,7 @@ gem 'unobtrusive_flash'
 gem 'bettertabs'
 gem 'kaminari'
 gem 'kaminari-i18n'
+gem 'truncate_html'
 
 
 group :development, :test do
