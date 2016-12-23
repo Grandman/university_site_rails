@@ -31,17 +31,17 @@ function elFinderBrowser (field_name, url, type, win) {
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :avatar %><br />
+    <%= f.label :avatar %>
     <%= f.file_field :avatar, autofocus: true %>
   </div>
   <% if resource.teacher? %>
     <div class="field">
-      <%= f.label :info %><br />
+      <%= f.label :info %>
       <%= f.text_area :info, autofocus: true %>
     </div>
   <% end %>
@@ -51,7 +51,7 @@ function elFinderBrowser (field_name, url, type, win) {
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(Оставить пустым, если не хотите изменять)</i><br />
+    <%= f.label :password %> <i>(Оставить пустым, если не хотите изменять)</i>
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
@@ -65,7 +65,7 @@ function elFinderBrowser (field_name, url, type, win) {
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(Введите текущий пароль для сохранения изменений)</i><br />
+    <%= f.label :current_password %> <i>(Введите текущий пароль для сохранения изменений)</i>
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 

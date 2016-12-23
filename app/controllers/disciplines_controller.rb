@@ -1,5 +1,8 @@
 class DisciplinesController < ApplicationController
   before_action :authenticate_user!
+  def index
+    @disciplines = Discipline.all
+  end
 
   def show
     @discipline = Discipline.find(params[:id])
@@ -31,5 +34,11 @@ class DisciplinesController < ApplicationController
       flash[:error] = @discipline.errors.full_messages.to_sentence
       render :new
     end
+  end
+
+  def destroy
+    @discipline = Discipline.find(params[:id])
+    @discipline.destroy!
+    redirect_to disciplines_path
   end
 end

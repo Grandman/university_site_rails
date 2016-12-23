@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.where(role: :teacher)
+  end
+
   def new
     @user = User.new
   end
@@ -17,5 +21,12 @@ class UsersController < ApplicationController
       flash[:error] = @user.errors.full_messages.to_sentence
       render :new
     end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.disciplines = []
+    @user.destroy!
+    redirect_to users_path
   end
 end

@@ -1,0 +1,14 @@
+%h1 Список преподавателей
+%table
+  %thead
+    %tr
+      %th Имя
+      %th{:colspan => "3"}
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.name
+        %td= link_to 'К странице', user_path(user)
+        %td= link_to 'Удалить', user, method: :delete, data: { confirm: 'Вы уверены?' }
+%br/
+= link_to 'Добавить преподавателя', new_user_path

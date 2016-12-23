@@ -7,8 +7,8 @@
     <div class="menu-block-wrapper menu-block-2 menu-name-user-menu parent-mlid-0 menu-level-1">
       <ul class="menu">
         <% if current_user.try(:admin?) %>
-          <li class="first leaf menu-mlid-2"><%= link_to 'Добавить предмет', new_discipline_path %></a></li>
-          <li class="first leaf menu-mlid-2"><%= link_to 'Добавить преподавателя', new_user_path %></a></li>
+          <li class="first leaf menu-mlid-2"><%= link_to 'Управление предметами', disciplines_path %></a></li>
+          <li class="first leaf menu-mlid-2"><%= link_to 'Преподаватели', users_path %></a></li>
           <li class="first leaf menu-mlid-2"><%= link_to 'Модерация', moderations_path %></a></li>
           <li class="first leaf menu-mlid-2"><%= link_to 'Страницы', static_pages_path %></a></li>
         <% end %>
