@@ -5,9 +5,9 @@
 - if @user == current_user
   = bettertabs :profile_tabs, :selected_tab => :info do |tab|
     = tab.static :info, 'Информация' do
+      .some{ style: 'float: left; padding-right: 10px;' }
+        = image_tag @user.avatar
       - if @user.teacher?
-        .some{ style: 'float: left; padding-right: 10px;' }
-          = image_tag @user.avatar
         %div
           = raw @user.info
           - if @user.teacher?
@@ -18,9 +18,9 @@
     = tab.static :files, 'Файл менеджер' do
       %iframe{src: "/elfinder_manager", width: '670px', height: '500px', frameborder: '0'}
 - else
+  .some{ style: 'float: left; padding-right: 10px;' }
+    = image_tag @user.avatar
   - if @user.teacher?
-    .some{ style: 'float: left; padding-right: 10px;' }
-      = image_tag @user.avatar
     %div
       = raw @user.info
       - if @user.teacher?
