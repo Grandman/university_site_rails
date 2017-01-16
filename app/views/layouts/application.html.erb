@@ -32,83 +32,11 @@
 <!-- Header Menu. -->
 <div id="header-menu">
     <div id="header-menu-inside">
-      <ul class="menu">
-        <li class="first leaf"><a href='/static_pages/enrollee'>Абитуриентам</a></li>
-		<li class="leaf"><a href="/news" title="Новости сайта">Новости</a></li>
-		<li class="expanded"><a href="/static_pages/prep">Преподаватели</a>
-          <ul class="menu">
-            <li class="first leaf">
-              <% User.where(role: :teacher).order(:id).each do |teacher|  %>
-                <li class="leaf"><%= link_to teacher.name, user_path(teacher) %> </li>
-              <% end %>
-	      </ul>
-        </li>
-        <li class="expanded"><a href='/static_pages/napr'>Направления</a>
-        <ul class="menu"><li class="first expanded"><a href='/static_pages/bak'>Бакалавриат</a>
-            <ul class="menu">
-              <li class="first expanded"><a href='/static_pages/bak/isebd'>Прикладная информатика</a>
-			    <ul class="menu">
-			      <li class="first leaf"><a href="/static_pages/ISEbd-1">Курс 1</a></li>
-				  <li class="leaf"><a href="/static_pages/ISEbd-2">Курс 2</a></li>
-				  <li class="leaf"><a href="/static_pages/ISEbd-3">Курс 3</a></li>
-				  <li class="last leaf"><a href="/static_pages/ISEbd-4">Курс 4</a></li>
-				</ul>
-			  </li>
-                          <li class="last expanded"><a href='/static_pages/bak/pibd'>Программная инженерия</a>
-               <ul class="menu">
-                 <li class="first leaf"><a href="/static_pages/PIbd-1">Курс 1</a></li>
-			     <li class="leaf"><a href="/static_pages/PIbd-2">Курс 2</a></li>
-			     <li class="leaf"><a href="/static_pages/PIbd-3">Курс 3</a></li>
-			     <li class="last leaf"><a href="/static_pages/PIbd-4">Курс 4</a></li>
-			   </ul>
-             </li>
-		   </ul>
-         </li>
-         <li class="last expanded"><a href='/static_pages/mag'>Магистратура</a>
-			<ul class="menu">
-				<li class="first expanded"><a href="/static_pages/ISEmd">Прикладная информатика</a>
-					<ul class="menu">
-					  <li class="first leaf"><a href="/static_pages/ISEmd-1">Курс 1</a></li>
-					  <li class="leaf"><a href="/static_pages/ISEmd-2">Курс 2</a></li>
-					</ul>
-				 </li>
-				 <li class="last expanded"><a href="/static_pages/PImd">Программная инженерия</a>
-				   <ul class="menu">
-					 <li class="first leaf"><a href="/static_pages/PImd-1">Курс 1</a></li>
-					 <li class="leaf"><a href="/static_pages/PImd-2">Курс 2</a></li>
-				   </ul>
-				 </li>
-			</ul>
-		 </li>
-       </ul>
-     </li>
-	 <li class="expanded"><a href="/static_pages/science">Наука</a>
-       <ul class="menu">
-         <li class="first expanded active-trail"><a href="/static_pages/pis">ПИС</a><ul class="menu"><li class="first expanded"><a href="/static_pages/pis2014">ПИС-2014</a><ul class="menu"><li class="first leaf"><a href="static_pages/pis2014info">ПИС-2014. Информационное письмо</a></li>
-          <li class="last leaf"><a href="/static_pages/pis2014usl">ПИС-2014. Условия предоставления материалов</a></li>
-          </ul></li>
-          <li class="expanded active-trail"><a href="/static_pages/pis2015">ПИС-2015</a>
-          <ul class="menu"><li class="first last leaf"><a href="/static_pages/pis2015info">ПИС-2015. Информационное письмо</a></li>
-          </ul>
-          </li>
-          <li class="last expanded active-trail"><a href="/static_pages/pis2016">ПИС-2016</a>
-          <ul class="menu"><li class="first last leaf"><a href="/static_pages/pis2016info">ПИС-2016. Информационное письмо</a></li>
-          </ul>
-          </li>
-          </ul>
-	     <li class="leaf"><a href="/static_pages/sntk">СНТК</a></li>
-		 <li class="leaf"><a href="/nir" title="">НИР</a></li>
-		 <li class="last leaf"><a href="/nirs" title="">НИРС</a></li>
-	   </ul>
-     </li>
-	 <li class="last expanded"><a href="/static_pages/rasp">Расписание</a>
-       <ul class="menu">
-         <li class="first leaf"><a href="/static_pages/rasp/group">Расписание групп</a></li>
-	  	 <li class="leaf"><a href="/static_pages/rasp/prep">Расписание преподавателей</a></li>
-	  	 <li class="last leaf"><a href="/static_pages/rasp/aud">Расписание аудиторий</a></li>
-	   </ul>
-     </li>
-   </ul>
+      <% teachers = User.where(role: :teacher).order(:id).map do |teacher|
+      "<li class='leaf'>#{link_to teacher.name, user_path(teacher)}</li>"
+       end %>
+      <%= raw (Menu.first.code.gsub('{teachers}', teachers.join))  %>
+
         <!-- <?php
             wp_nav_menu( array(
                 'theme_location' => 'primary',

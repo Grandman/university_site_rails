@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :news
   resources :disciplines
+  resource :menu
   get '/moderations', to: 'moderations#index'
   get '/elfinder_manager', to: 'elfinder#index'
   match 'elfinder' => 'elfinder#elfinder', via: [:get, :post]
