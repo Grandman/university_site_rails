@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :news
+  has_many :news, dependent: :destroy
   has_many :disciplines
 
   enumerize :role, in: [:student, :admin, :teacher], default: :student, predicates: true
