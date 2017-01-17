@@ -47,6 +47,7 @@ gem 'bettertabs'
 gem 'kaminari'
 gem 'kaminari-i18n'
 gem 'truncate_html'
+gem 'pundit'
 
 
 group :development, :test do

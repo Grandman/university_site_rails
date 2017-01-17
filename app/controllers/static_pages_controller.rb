@@ -4,27 +4,32 @@ class StaticPagesController < ApplicationController
   # GET /static_pages
   # GET /static_pages.json
   def index
+    authorize :static_page
     @static_pages = StaticPage.all
   end
 
   # GET /static_pages/1
   # GET /static_pages/1.json
   def show
+    authorize @static_page
   end
 
   # GET /static_pages/new
   def new
     @static_page = StaticPage.new
+    authorize @static_page
   end
 
   # GET /static_pages/1/edit
   def edit
+    authorize @static_page
   end
 
   # POST /static_pages
   # POST /static_pages.json
   def create
     @static_page = StaticPage.new(static_page_params)
+    authorize @static_page
 
     respond_to do |format|
       if @static_page.save
@@ -40,6 +45,7 @@ class StaticPagesController < ApplicationController
   # PATCH/PUT /static_pages/1
   # PATCH/PUT /static_pages/1.json
   def update
+    authorize @static_page
     respond_to do |format|
       if @static_page.update(static_page_params)
         format.html { redirect_to @static_page, notice: 'Страница успешно обновлена' }
@@ -54,6 +60,7 @@ class StaticPagesController < ApplicationController
   # DELETE /static_pages/1
   # DELETE /static_pages/1.json
   def destroy
+    authorize @static_page
     @static_page.destroy
     respond_to do |format|
       format.html { redirect_to static_pages_url, notice: 'Страница успешно удалена' }

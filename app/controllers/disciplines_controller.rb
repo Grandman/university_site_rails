@@ -1,6 +1,6 @@
 class DisciplinesController < ApplicationController
-  before_action :authenticate_user!
   def index
+    authorize :discipline
     @disciplines = Discipline.all
   end
 
@@ -10,10 +10,12 @@ class DisciplinesController < ApplicationController
 
   def edit
     @discipline = Discipline.find(params[:id])
+    authorize @discipline
   end
 
   def update
     @discipline = Discipline.find(params[:id])
+    authorize @discipline
     if (@discipline.update(params.require(:discipline).permit(:name, :user_id, :page)))
       redirect_to @discipline
     else
@@ -24,10 +26,12 @@ class DisciplinesController < ApplicationController
 
   def new
     @discipline = Discipline.new
+    authorize @discipline
   end
 
   def create
     @discipline = Discipline.new(params.require(:discipline).permit(:name, :user_id, :page))
+    authorize @discipline
     if @discipline.save
       redirect_to @discipline
     else
@@ -38,6 +42,7 @@ class DisciplinesController < ApplicationController
 
   def destroy
     @discipline = Discipline.find(params[:id])
+    authorize @discipline
     @discipline.destroy!
     redirect_to disciplines_path
   end

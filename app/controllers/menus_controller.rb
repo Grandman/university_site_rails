@@ -1,6 +1,7 @@
 class MenusController < ApplicationController
   def edit
     @menu = Menu.first
+    authorize @menu
   end
 
   def update

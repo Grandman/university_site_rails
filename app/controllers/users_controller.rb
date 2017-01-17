@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   def index
+    authorize :user
     @users = User.where(role: :teacher)
   end
 
   def new
     @user = User.new
+    authorize @user
   end
 
   def show
@@ -25,6 +27,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    authorize @user
     @user.disciplines = []
     @user.destroy!
     redirect_to users_path

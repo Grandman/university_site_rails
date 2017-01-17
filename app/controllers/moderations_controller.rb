@@ -1,6 +1,7 @@
 class ModerationsController < ApplicationController
   def index
     @users = User.where(approve: false)
+    authorize :moderation
   end
 
   def create
